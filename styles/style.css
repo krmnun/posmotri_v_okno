@@ -106,7 +106,7 @@ button {
   font-size: 18px;
   font-style: normal;
   margin-bottom: 5px;
-  color: #FFF;
+  color: #fff;
 }
 
 .search-form__checkbox-list {
@@ -142,7 +142,7 @@ button {
   background-color: #fff;
 }
 
-.search-form__label:hover {
+.search-form__label:hover .search-form__label-text {
   text-decoration: underline;
 }
 
@@ -167,22 +167,45 @@ button {
   outline: none;
 }
 
-.search-form__textfield:focus-visible {
+.search-form__textfield:focus-visible,
+.search-form__label:has(:focus-visible) {
   outline: 1px solid #fff;
   outline-offset: 2px;
 }
 
-.search-form__submit-button {
-  align-self: flex-end;
+.button {
   min-inline-size: 194px;
   min-block-size: 34px;
-  padding: 6px 73px;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-weight: 700;
   text-align: center;
   border: 1px solid #fff;
-  background-color: #1b1919;
   color: #fff;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.button:active {
+  background-color: #545050;
+}
+
+.button:hover {
+  text-decoration: underline;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.search-form__submit-button {
+  align-self: flex-end;
+  padding: 6px 73px;
+  background-color: #1b1919;
 }
 
 .title {
@@ -242,7 +265,7 @@ button {
   white-space: nowrap;
   overflow: hidden;
   color: #fff;
-  max-inline-size: 300px;
+  max-inline-size: 200px;
 }
 
 .content__video-card-description {
@@ -257,41 +280,8 @@ button {
 
 .more-button {
   max-inline-size: 396px;
-  min-inline-size: 194px;
+  min-inline-size: 399px;
   min-block-size: 34px;
-  margin-block-start: 20px;
-  background-color: #1b1919;
-  border: 1px solid #fff;
-  color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  text-align: center;
-}
-
-.button {
-  font-family: inherit;
-  font-weight: 700;
-  font-size: 18px;
-  text-align: center;
-  min-block-size: 34px;
-  cursor: pointer;
-  border: 1px solid #fff;
-  color: #fff;
-  background-color: transparent;
-}
-
-.button:active {
-  background-color: #545050;
-}
-
-.button:hover {
-  text-decoration: underline;
-}
-
-.button:focus-visible {
-  outline: 1px solid #fff;
-  outline-offset: 1px;
 }
 
 .content__card-link {
@@ -311,6 +301,10 @@ button {
 .content__card-link_current,
 .content__card-link:active {
   background-color: #545050;
+}
+
+.content__card-link:focus {
+  outline: none;
 }
 
 .content__card-link:focus-visible {
